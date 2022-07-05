@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UrunlerSayfasiFragment" >
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Sınırlı Sayıdakiler"
+        android:textColor="@color/fiyatRenk"
+        app:chipBackgroundColor="@color/white"
+        app:chipStrokeColor="@color/fiyatRenk"
+        app:chipStrokeWidth="1dp"
+        app:chipCornerRadius="5dp"
+        app:layout_constraintStart_toEndOf="@+id/chip4"
+        app:layout_constraintTop_toBottomOf="@+id/rvKategori" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Gelecek Ürünler"
+        android:textColor="@color/fiyatRenk"
+        app:chipBackgroundColor="@color/white"
+        app:chipCornerRadius="5dp"
+        app:chipStrokeColor="@color/fiyatRenk"
+        app:chipStrokeWidth="1dp"
+        app:layout_constraintStart_toEndOf="@+id/chip6"
+        app:layout_constraintTop_toBottomOf="@+id/rvKategori" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:text="Yeni Ürünler"
+        android:textColor="@color/white"
+        app:chipBackgroundColor="@color/fiyatRenk"
+        app:chipCornerRadius="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/rv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvKategori" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarUrunlerSayfasi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:background="@color/toolbarRenk"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/getirlogo2"
+            android:layout_gravity = "center" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="96dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarUrunlerSayfasi" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/alt_bar_tasarim"
+        app:itemIconSize="@android:dimen/system_app_widget_background_radius"
+        app:labelVisibilityMode="unlabeled"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvKategori"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarUrunlerSayfasi" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
