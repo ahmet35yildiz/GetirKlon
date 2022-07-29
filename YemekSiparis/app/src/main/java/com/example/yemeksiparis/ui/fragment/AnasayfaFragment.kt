@@ -1,7 +1,7 @@
 package com.example.yemeksiparis.ui.fragment
 
 import android.os.Bundle
-import android.util.Log
+import android.os.CountDownTimer
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
@@ -9,8 +9,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.yemeksiparis.R
+import com.example.yemeksiparis.data.entity.Banner
+import com.example.yemeksiparis.data.entity.SlowlyLinearLayoutManager
 import com.example.yemeksiparis.databinding.FragmentAnasayfaBinding
+import com.example.yemeksiparis.ui.adapter.BannerAdapter
 import com.example.yemeksiparis.ui.adapter.YemeklerAdapter
 import com.example.yemeksiparis.ui.viewmodel.AnasayfaFragmentViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -22,6 +26,7 @@ class AnasayfaFragment : Fragment(),SearchView.OnQueryTextListener {
     private lateinit var tasarim:FragmentAnasayfaBinding
     private lateinit var viewModel: AnasayfaFragmentViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        tasarim = FragmentAnasayfaBinding.inflate(inflater,container,false)
         tasarim = DataBindingUtil.inflate(inflater,R.layout.fragment_anasayfa  ,container, false)
         tasarim.anasayfaFragment = this
         tasarim.anasayfaToolbarBaslik = "Yemekler"
@@ -32,6 +37,35 @@ class AnasayfaFragment : Fragment(),SearchView.OnQueryTextListener {
             tasarim.yemeklerAdapter = adapter
         }
 
+        val bannerListesi = ArrayList<Banner>()
+        val b1 = Banner(1,"banner1")
+        val b2 = Banner(2,"banner2")
+        val b3 = Banner(3,"banner3")
+        bannerListesi.add(b1)
+        bannerListesi.add(b2)
+        bannerListesi.add(b3)
+        val adapterBanner = BannerAdapter(requireContext(),bannerListesi)
+        tasarim.rvBanner.adapter = adapterBanner
+        val timer = object :CountDownTimer(5500,1000){
+            override fun onTick(millisUntilFinished: Long) {
+                tasarim.rvBanner.post {
+                    tasarim.rvBanner.smoothScrollToPosition(adapterBanner.itemCount+3)
+                }
+            }
+
+            override fun onFinish() {
+                tasarim.rvBanner.post {
+                    tasarim.rvBanner.smoothScrollToPosition(0)
+                }
+            }
+        }
+        object : CountDownTimer(1000,1000) {
+            override fun onTick(millisUntilFinished: Long) {}
+            override fun onFinish() {
+                timer.start()
+            }
+        }.start()
+        tasarim.rvBanner.layoutManager = SlowlyLinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
         return tasarim.root
     }
 

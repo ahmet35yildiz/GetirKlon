@@ -3,12 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/YemekSiparis/app/src/main/res/drawable/anasayfa_resim.xml" value="0.2335" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/YemekSiparis/app/src/main/res/drawable/fav_resim.xml" value="0.2335" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/YemekSiparis/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.172" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/YemekSiparis/app/src/main/res/drawable/sepet_resim.xml" value="0.15" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/YemekSiparis/app/src/main/res/layout/activity_main.xml" value="0.32608695652173914" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/YemekSiparis/app/src/main/res/layout/card_tasarim.xml" value="0.32608695652173914" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/YemekSiparis/app/src/main/res/layout/card_tasarim_anasayfa.xml" value="0.371875" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/YemekSiparis/app/src/main/res/layout/card_tasarim_banner.xml" value="0.3632246376811594" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/YemekSiparis/app/src/main/res/layout/card_tasarim_sepet.xml" value="0.371875" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/YemekSiparis/app/src/main/res/layout/fragment_anasayfa.xml" value="0.32608695652173914" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/YemekSiparis/app/src/main/res/layout/fragment_login.xml" value="0.3632246376811594" />
